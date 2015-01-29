@@ -29,6 +29,7 @@ module.exports = function(grunt) {
       js: {
         src: [
         'bower_components/jquery/dist/jquery.js',
+        'bower_components/OwlCarousel/owl-carousel/owl.carousel.js',
         'bower_components/bootstrap/dist/js/bootstrap.js',
         'bower_components/angular/angular.js',
         'bower_components/angular-scroll/angular-scroll.js'
@@ -42,6 +43,8 @@ module.exports = function(grunt) {
         files: {
           'public/styles/libs.css': [
           'bower_components/bootstrap/dist/css/bootstrap.css',
+          'bower_components/OwlCarousel/owl-carousel/owl.carousel.css',
+          'bower_components/OwlCarousel/owl-carousel/owl.theme.css',
           'bower_components/font-awesome/css/font-awesome.min.css'
           ]
         }
