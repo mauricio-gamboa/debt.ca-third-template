@@ -26,7 +26,6 @@ myApp.controller('GetStartedCtrl', ['$scope', '$log', function($scope, $log) {
       $scope.showFirst = false;
       $scope.showSpinner = true;
       $scope.showSpinner = false;
-      $scope.title = 'you qualify for a free analysis!';
       $scope.showLast = true;
     }
   };
