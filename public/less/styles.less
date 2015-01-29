@@ -737,6 +737,12 @@ Testimonials Styles
 
   @media @xs {
     text-align: center;
+
+    .logos {
+      border-bottom: 1px solid @gray-9;
+      padding-bottom: 19px;
+      margin-bottom: 19px;
+    }
   }
 }
 
@@ -776,6 +782,19 @@ Testimonials Styles
           font-style: normal;
         }
       }
+    }
+  }
+}
+
+.logos {
+  .logo-slide {
+    line-height: 60px;
+    height: 60px;
+    text-align: center;
+
+    img {
+      vertical-align: middle;
+      max-width: 100%;
     }
   }
 }
@@ -953,7 +972,16 @@ Tabs Styles
   line-height: 45px;
   padding: 0 29px;
   border-radius: 25px;
-  font-size: 15px;
+
+  p {
+    float: left;
+    font-size: 15px;
+    margin: 0;
+    max-width: 85%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 
   span {
     cursor: pointer;

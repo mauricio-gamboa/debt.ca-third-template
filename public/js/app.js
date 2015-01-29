@@ -35,14 +35,15 @@ myApp.controller('GetStartedCtrl', ['$scope', '$log', function($scope, $log) {
   };
 }]);
 
-myApp.directive('owlSingle', [function () {
+myApp.directive('owlLogos', [function () {
   return {
     restrict: 'A',
 
     link: function (scope, element) {
       element.owlCarousel({
         autoPlay: true,
-        singleItem: true
+        pagination: false,
+        itemsMobile: 2
       });
     }
   };
