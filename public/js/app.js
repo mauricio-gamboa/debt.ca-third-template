@@ -57,3 +57,18 @@ myApp.directive('popover', [function () {
     }
   };
 }]);
+
+myApp.directive('modalClose', [function () {
+  return {
+    restrict: 'A',
+
+    link: function (scope, element) {
+      element.on('hide.bs.modal', function(e) { 
+        var player= $(element).find('iframe'),
+        vidSrc = player.prop('src');
+        player.prop('src','');
+        player.prop('src',vidSrc);
+      });
+    }
+  };
+}]);
