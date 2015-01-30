@@ -1,6 +1,6 @@
 'use strict';
 
-var myApp = angular.module('Debt', ['duScroll']);
+var myApp = angular.module('Debt', ['duScroll', 'ui.slider']);
 
 myApp.controller('TabsCtrl', ['$scope', function($scope) {
   $scope.tabs = ['Canadian Debt Relief', 'How Does It Work?', 'What Types of Debt Qualify?', 'Why Choose Debt.ca?', 'Why Should I Avoid Bankruptcy?', 'How Do I Get Started?'];
@@ -23,6 +23,38 @@ myApp.controller('GetStartedCtrl', ['$scope', '$log', function($scope, $log) {
   
   $scope.submitQualify = function (isValid) {
     if (isValid) {
+      $scope.showFirst = false;
+      $scope.showSpinner = true;
+      $scope.showSpinner = false;
+      $scope.showLast = true;
+    }
+  };
+
+  $scope.getEstimate = function (isValid) {
+    if (isValid) $log.log($scope.estimateData);
+  };
+}]);
+
+myApp.controller('GetStartedSliderCtrl', ['$scope', '$log', function($scope, $log) {
+  $scope.estimateData = {};
+  
+  $scope.showZero = true;
+  $scope.showFirst = false;
+  $scope.showSpinner = false;
+  $scope.showLast = false;
+  
+  $scope.min = 5000;
+  $scope.max = 200000;
+  $scope.estimateData.value = 50000;
+
+  $scope.firstStep = function() {
+    $scope.showZero = false;
+    $scope.showFirst = true;
+  };
+
+  $scope.submitQualify = function (isValid) {
+    if (isValid) {
+      $scope.showZero = false;
       $scope.showFirst = false;
       $scope.showSpinner = true;
       $scope.showSpinner = false;
